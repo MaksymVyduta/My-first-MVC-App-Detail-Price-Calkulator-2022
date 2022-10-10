@@ -43,7 +43,7 @@ public class WycenaOring {
 
         double koeficjientwartoscisurowca= wartoscsur*1.5 ;
 
-        maxiloscgniazd = ( (360 / (srednicaZewn + 10)) * (360 / (srednicaZewn + 10)))*0.7+0.6;
+        maxiloscgniazd = ( (360 / (srednicaZewn + 10)) * (360 / (srednicaZewn + 10)))*0.65+0.6;
 
 
         wartoscOring = (obrotNaPrasie *koeficjentIlosciowy *koeficjentwymiarow(srednicaZewn)) / (maxiloscgniazd) / 60 + koeficjientwartoscisurowca;

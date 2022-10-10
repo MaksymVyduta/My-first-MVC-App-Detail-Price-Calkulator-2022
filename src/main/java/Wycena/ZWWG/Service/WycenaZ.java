@@ -31,7 +31,7 @@ public class WycenaZ {
 
 
 
-        maxiloscgniazd = ( (360 / (srednicazewn + 10)) * (360 / (srednicazewn + 10)))*0.7+0.6;
+        maxiloscgniazd = ( (360 / (srednicazewn + 10)) * (360 / (srednicazewn + 10)))*0.65+0.6;
 
 
         wartoscZ = (obrotNaPrasie *koeficjentIlosciowy *koeficjentwymiarow(srednicazewn)) / (maxiloscgniazd) / 60 + wartoscsur;
