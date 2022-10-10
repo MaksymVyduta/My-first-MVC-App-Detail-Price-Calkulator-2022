@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body>
+<form th:action="@{/aktualizujobr}" th:object="${obrotNaPrasie}" method="post">
+<table class="table table-striped">
+    <tr>
+        <th>Obrót na prasie  </th>
+        <th>  <input type="number" name="obrotNaPrasie"  min="0"  th:field="*{obrotNaPrasie}">    </th>
+        <th> <input type="hidden" name="id" th:field="*{id}" > </th>
+        <th> <input type="submit"></th> </tr>
+    <br>
+    <br>
+    <td><a href="#" th:href="@{/}" class="btn btn-primary">
+        <i class="fa fa-trash-o fa-lg" ></i>Wroć na strone główną</a></td></tr>
+
+</table>
+</form>
+</body>
+</html>

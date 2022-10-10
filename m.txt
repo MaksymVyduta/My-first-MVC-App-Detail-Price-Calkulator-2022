@@ -1,0 +1,12 @@
+//  @PostMapping("/")
+    //@ResponseStatus(HttpStatus.CREATED)
+    //public void post(@RequestBody WkladyMetalowe newWklad){ this.WkladyMetaloweRepo.save(newWklad);}
+
+
+react_devtools_backend.js:4026 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `Wklady`. See https://reactjs.org/link/warning-keys for more information.
+    at tr
+    at Wklady (http://localhost:3000/static/js/bundle.js:108:82)
+    at div
+    at App

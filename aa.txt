@@ -1,0 +1,19 @@
+<select th:field="*{nazwa}">
+    <option value="">Select a country</option>
+    <option th:each="wpis: ${WszystkieMieszanki}" th:text="${nazwa }"/>
+</select>
+
+
+<script language="javascript" >
+  $(document).ready(function () {
+   $('#wymiary').hide();
+    toggleFields();
+    $("#wyrob").change(function () {
+        toggleFields();
+    });
+});
+function toggleFields() {
+    if ($("#wyrob").val() === "1")
+     $("#wymiary").show();}
+
+    </script>

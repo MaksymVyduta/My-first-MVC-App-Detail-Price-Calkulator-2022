@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<form name="form1" th:action="@{/cena}"  >
+
+
+    <div class="col-md-4">
+        Typ Wyrobu
+        <select id="wyrob" name="wyrob" class="form-control">
+            <option value="1">O-ring</option>
+            <option value="2">Simmering</option>
+            <option value="3">U1,U2,Un</option>
+            <option value="4">Nietypowe</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-6">
+        Wybierz material
+        <select  name="id"   class="form-control">
+            <option  th:each="wpis: ${WszystkieMieszanki}"  th:value="${wpis.id}" th:text="${wpis.nazwa}+'  '+${wpis.kolor}+'        (Cena miesznki: '+${wpis.cena} +'PLN netto / kg)'">
+            </option>
+        </select>
+    </div>
+
+<div class="col-md-4">
+Wpisz średnice Wewnętrzną
+<br>
+<input type="number" id="wymiary" name="srednicawewn" step="0.01" min="0" value="0" class="form-control" >
+</div>
+<br>
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#oring" aria-expanded="false" aria-controls="ukryta-tresc">
+            Jeżeli chccesz wycenić O-ringa kliknij by wpisać średnicę.
+        </button>
+    </p>
+    <div class="col-md-4" >
+        <div class="collapse" id="oring">
+            <div class="card card-body">
+        Wpisz przekrój
+        <br>
+        <input type="number" name="przekroj" step="0.01" min="0" value="0" class="form-control"   >
+    </div>
+        </div>
+    </div>
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ukryta-tresc" aria-expanded="false" aria-controls="ukryta-tresc">
+            Jeżeli chccesz wycenić inny detal kliknij by wpisać średnicę zewnętrzną i wysokość dtalu.
+        </button>
+    </p>
+    <div class="collapse" id="ukryta-tresc">
+        <div class="card card-body">
+<div class="col-md-4">
+Wpisz średnice Zewnętrzną
+<br>
+<input type="number"  name="srednicazewn" step="0.01" min="0"  value="0" class="form-control"  >
+<br>
+Wpisz wysokość
+<br>
+<input type="number" name="wysokosc" step="0.01" min="0"  value="0"  class="form-control" >
+</div>
+        </div>
+    </div>
+
+<div class="col-md-4">
+Wpisz ilość sztuk
+<br>
+<input type="number" name="iloscsztuk" step="1" min="0" value="50"  class="form-control" >
+</div>
+    <div class="col-md-4">
+        Marza w %
+        <br>
+        <input type="number" name="marza" step="1" min="0" value="30" class="form-control" >
+    </div>
+<br>
+<input type="submit" class="form-control"></td>
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <style>
+ input[type=submit]{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Cena mieszanki</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script language="javascript" type="text/javascript">
+function removeSpaces(string) {
+ return string.split(' ').join('');
+}
+</script>
+</head>
+<body>
+<form th:action="@{/addmieszanka}" method="post">
+    <table class="table table-striped">
+        <tr>
+            <td>Rodzaj mieszanki </td>
+            <td><input name="nazwa"  onblur="this.value=removeSpaces(this.value)" ></td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Twardość , Kolor, atesty </td>
+            <td><input name="kolor" ></td>
+        </tr>
+        <tr>
+            <td>Gęstość </td>
+            <td><input type="number" name="gestosc" step="0.01" min="0"  ></td>
+        </tr>
+        <tr>
+            <td>Cena</td>
+            <td> <input type="number" name="cena"  step="0.01" min="0"  > </td>
+        </tr>
+        <tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Dodaj nową Mieszankę do bazy"></td>
+    </table>
+</form>
+</body>
+</html>
