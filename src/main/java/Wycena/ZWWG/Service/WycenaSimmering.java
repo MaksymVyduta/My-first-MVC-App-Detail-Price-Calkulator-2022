@@ -36,7 +36,7 @@ public class WycenaSimmering {
 
 
 
-        maxiloscgniazd = ( (400 / (srednicazewn + 30)) * (400 / (srednicazewn + 30)))*0.65+0.6;
+        maxiloscgniazd = ( (400 / (srednicazewn + 30)) * (400 / (srednicazewn + 30)))*0.7+0.6;
 
 
         wartoscSimmer = (obrotNaPrasie *koeficjentIlosciowy *koeficjentwymiarow(srednicazewn)) / (maxiloscgniazd) / 60 + wartoscsur;
